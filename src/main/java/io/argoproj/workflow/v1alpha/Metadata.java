@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Map;
 /**
  * Pod metdata
  */
-public class Metadata   {
+public class Metadata  implements Serializable {
   private Map<String, String> annotations = null;
 
   private Map<String, String> labels = null;
@@ -86,7 +87,7 @@ public class Metadata   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Metadata {\n");
-    
+
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("}");

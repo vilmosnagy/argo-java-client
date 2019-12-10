@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1SecretKeySelector;
@@ -7,7 +8,7 @@ import io.kubernetes.client.models.V1SecretKeySelector;
 /**
  * S3Artifact is the location of an S3 artifact
  */
-public class S3Artifact   {
+public class S3Artifact   implements Serializable {
   private V1SecretKeySelector accessKeySecret = null;
 
   private String bucket;
@@ -169,7 +170,7 @@ public class S3Artifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1S3Artifact {\n");
-    
+
     sb.append("    accessKeySecret: ").append(toIndentedString(accessKeySecret)).append("\n");
     sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");

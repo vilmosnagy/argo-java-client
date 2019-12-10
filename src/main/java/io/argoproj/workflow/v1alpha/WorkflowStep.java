@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * WorkflowStep is a reference to a template to execute in a series of step
  */
-public class WorkflowStep   {
+public class WorkflowStep  implements Serializable {
   private Arguments arguments = null;
 
   private ContinueOn continueOn = null;
@@ -197,7 +198,7 @@ public class WorkflowStep   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1WorkflowStep {\n");
-    
+
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("    continueOn: ").append(toIndentedString(continueOn)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

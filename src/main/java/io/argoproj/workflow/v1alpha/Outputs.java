@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * Outputs hold parameters, artifacts, and results from a step
  */
-public class Outputs   {
+public class Outputs  implements Serializable {
   private List<Artifact> artifacts = null;
 
   private List<Parameter> parameters = null;
@@ -105,7 +106,7 @@ public class Outputs   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Outputs {\n");
-    
+
     sb.append("    artifacts: ").append(toIndentedString(artifacts)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");

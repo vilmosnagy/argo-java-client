@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * Inputs are the mechanism for passing parameters, artifacts, volumes from one template to another
  */
-public class Inputs   {
+public class Inputs  implements Serializable {
   private List<Artifact> artifacts = null;
 
   private List<Parameter> parameters = null;
@@ -85,7 +86,7 @@ public class Inputs   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Inputs {\n");
-    
+
     sb.append("    artifacts: ").append(toIndentedString(artifacts)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("}");

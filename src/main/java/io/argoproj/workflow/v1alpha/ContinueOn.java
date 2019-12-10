@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * ContinueOn defines if a workflow should continue even if a task or step fails/errors. It can be specified if the workflow should continue when the pod errors, fails or both.
  */
-public class ContinueOn   {
+public class ContinueOn  implements Serializable {
   private Boolean error;
 
   private Boolean failed;
@@ -68,7 +69,7 @@ public class ContinueOn   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ContinueOn {\n");
-    
+
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
     sb.append("}");

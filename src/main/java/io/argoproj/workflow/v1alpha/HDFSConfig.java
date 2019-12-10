@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1ConfigMapKeySelector;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * HDFSConfig is configurations for HDFS
  */
-public class HDFSConfig   {
+public class HDFSConfig  implements Serializable {
   private List<String> addresses = new ArrayList<>();
 
   private String hdfsUser;
@@ -200,7 +201,7 @@ public class HDFSConfig   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1HDFSConfig {\n");
-    
+
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    hdfsUser: ").append(toIndentedString(hdfsUser)).append("\n");
     sb.append("    krbCCacheSecret: ").append(toIndentedString(krbCCacheSecret)).append("\n");

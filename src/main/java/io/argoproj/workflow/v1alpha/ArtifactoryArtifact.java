@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1SecretKeySelector;
@@ -7,7 +8,7 @@ import io.kubernetes.client.models.V1SecretKeySelector;
 /**
  * ArtifactoryArtifact is the location of an artifactory artifact
  */
-public class ArtifactoryArtifact   {
+public class ArtifactoryArtifact  implements Serializable {
   private V1SecretKeySelector passwordSecret = null;
 
   private String url;
@@ -89,7 +90,7 @@ public class ArtifactoryArtifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ArtifactoryArtifact {\n");
-    
+
     sb.append("    passwordSecret: ").append(toIndentedString(passwordSecret)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    usernameSecret: ").append(toIndentedString(usernameSecret)).append("\n");

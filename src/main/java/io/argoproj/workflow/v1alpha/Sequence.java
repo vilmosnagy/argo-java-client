@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Sequence expands a workflow step into numeric range
  */
-public class Sequence   {
+public class Sequence   implements Serializable {
   private String count;
 
   private String end;
@@ -107,7 +108,7 @@ public class Sequence   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Sequence {\n");
-    
+
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");

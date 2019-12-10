@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Parameter indicate a passed string parameter to a service template with an optional default value
  */
-public class Parameter   {
+public class Parameter   implements Serializable {
   private String _default;
 
   private String globalName;
@@ -127,7 +128,7 @@ public class Parameter   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Parameter {\n");
-    
+
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    globalName: ").append(toIndentedString(globalName)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

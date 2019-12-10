@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1Affinity;
@@ -17,7 +18,7 @@ import java.util.Map;
 /**
  * WorkflowSpec is the specification of a Workflow.
  */
-public class WorkflowSpec   {
+public class WorkflowSpec   implements Serializable {
   private Long activeDeadlineSeconds;
 
   private V1Affinity affinity = null;
@@ -524,7 +525,7 @@ public class WorkflowSpec   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1WorkflowSpec {\n");
-    
+
     sb.append("    activeDeadlineSeconds: ").append(toIndentedString(activeDeadlineSeconds)).append("\n");
     sb.append("    affinity: ").append(toIndentedString(affinity)).append("\n");
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");

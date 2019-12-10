@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1ContainerPort;
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * UserContainer is a container specified by a user.
  */
-public class UserContainer   {
+public class UserContainer  implements Serializable {
   private List<String> args = null;
 
   private List<String> command = null;
@@ -536,7 +537,7 @@ public class UserContainer   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1UserContainer {\n");
-    
+
     sb.append("    args: ").append(toIndentedString(args)).append("\n");
     sb.append("    command: ").append(toIndentedString(command)).append("\n");
     sb.append("    env: ").append(toIndentedString(env)).append("\n");

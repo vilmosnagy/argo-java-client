@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1ObjectMeta;
@@ -7,7 +8,7 @@ import io.kubernetes.client.models.V1ObjectMeta;
 /**
  * Workflow is the definition of a workflow resource
  */
-public class Workflow   {
+public class Workflow  implements Serializable {
   private String apiVersion;
 
   private String kind;
@@ -129,7 +130,7 @@ public class Workflow   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Workflow {\n");
-    
+
     sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");

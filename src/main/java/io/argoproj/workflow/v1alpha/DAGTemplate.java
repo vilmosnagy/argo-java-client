@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
  * DAGTemplate is a template subtype for directed acyclic graph templates
  */
 
-public class DAGTemplate   {
+public class DAGTemplate  implements Serializable {
   private String target;
 
   private List<DAGTask> tasks = new ArrayList<>();
@@ -75,7 +76,7 @@ public class DAGTemplate   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1DAGTemplate {\n");
-    
+
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
     sb.append("}");

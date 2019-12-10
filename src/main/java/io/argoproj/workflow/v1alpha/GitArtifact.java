@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1SecretKeySelector;
@@ -7,7 +8,7 @@ import io.kubernetes.client.models.V1SecretKeySelector;
 /**
  * GitArtifact is the location of an git artifact
  */
-public class GitArtifact   {
+public class GitArtifact  implements Serializable {
   private Boolean insecureIgnoreHostKey;
 
   private V1SecretKeySelector passwordSecret = null;
@@ -149,7 +150,7 @@ public class GitArtifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1GitArtifact {\n");
-    
+
     sb.append("    insecureIgnoreHostKey: ").append(toIndentedString(insecureIgnoreHostKey)).append("\n");
     sb.append("    passwordSecret: ").append(toIndentedString(passwordSecret)).append("\n");
     sb.append("    repo: ").append(toIndentedString(repo)).append("\n");

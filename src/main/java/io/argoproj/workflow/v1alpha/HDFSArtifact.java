@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1ConfigMapKeySelector;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * HDFSArtifact is the location of an HDFS artifact
  */
-public class HDFSArtifact   {
+public class HDFSArtifact  implements Serializable {
   private List<String> addresses = new ArrayList<>();
 
   private Boolean force;
@@ -238,7 +239,7 @@ public class HDFSArtifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1HDFSArtifact {\n");
-    
+
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    force: ").append(toIndentedString(force)).append("\n");
     sb.append("    hdfsUser: ").append(toIndentedString(hdfsUser)).append("\n");

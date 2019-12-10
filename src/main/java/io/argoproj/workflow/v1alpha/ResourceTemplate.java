@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * ResourceTemplate is a template subtype to manipulate kubernetes resources
  */
-public class ResourceTemplate   {
+public class ResourceTemplate  implements Serializable {
   private String action;
 
   private String failureCondition;
@@ -127,7 +128,7 @@ public class ResourceTemplate   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ResourceTemplate {\n");
-    
+
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    failureCondition: ").append(toIndentedString(failureCondition)).append("\n");
     sb.append("    manifest: ").append(toIndentedString(manifest)).append("\n");

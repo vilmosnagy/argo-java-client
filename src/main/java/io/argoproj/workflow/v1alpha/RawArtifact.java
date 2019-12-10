@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * RawArtifact allows raw string content to be placed as an artifact in a container
  */
-public class RawArtifact   {
+public class RawArtifact   implements Serializable {
   private String data;
 
   public RawArtifact data(String data) {
@@ -47,7 +48,7 @@ public class RawArtifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1RawArtifact {\n");
-    
+
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

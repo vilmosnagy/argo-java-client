@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * HTTPArtifact allows an file served on HTTP to be placed as an input artifact in a container
  */
-public class HTTPArtifact   {
+public class HTTPArtifact  implements Serializable {
   private String url;
 
   public HTTPArtifact url(String url) {
@@ -48,7 +49,7 @@ public class HTTPArtifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1HTTPArtifact {\n");
-    
+
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();

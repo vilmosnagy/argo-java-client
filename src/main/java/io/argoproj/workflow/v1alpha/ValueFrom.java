@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * ValueFrom describes a location in which to obtain the value to a parameter
  */
-public class ValueFrom   {
+public class ValueFrom  implements Serializable {
   private String jqFilter;
 
   private String jsonPath;
@@ -107,7 +108,7 @@ public class ValueFrom   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ValueFrom {\n");
-    
+
     sb.append("    jqFilter: ").append(toIndentedString(jqFilter)).append("\n");
     sb.append("    jsonPath: ").append(toIndentedString(jsonPath)).append("\n");
     sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");

@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1ContainerPort;
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * ScriptTemplate is a template subtype to enable scripting through code steps
  */
-public class ScriptTemplate   {
+public class ScriptTemplate  implements Serializable {
   private List<String> args = null;
 
   private List<String> command = null;
@@ -536,7 +537,7 @@ public class ScriptTemplate   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ScriptTemplate {\n");
-    
+
     sb.append("    args: ").append(toIndentedString(args)).append("\n");
     sb.append("    command: ").append(toIndentedString(command)).append("\n");
     sb.append("    env: ").append(toIndentedString(env)).append("\n");

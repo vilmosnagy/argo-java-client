@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1SecretKeySelector;
@@ -7,7 +8,7 @@ import io.kubernetes.client.models.V1SecretKeySelector;
 /**
  * S3Bucket contains the access information required for interfacing with an S3 bucket
  */
-public class S3Bucket   {
+public class S3Bucket  implements Serializable {
   private V1SecretKeySelector accessKeySecret = null;
 
   private String bucket;
@@ -149,7 +150,7 @@ public class S3Bucket   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1S3Bucket {\n");
-    
+
     sb.append("    accessKeySecret: ").append(toIndentedString(accessKeySecret)).append("\n");
     sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");

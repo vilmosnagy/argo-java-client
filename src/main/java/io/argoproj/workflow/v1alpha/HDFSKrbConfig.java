@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1ConfigMapKeySelector;
@@ -8,7 +9,7 @@ import io.kubernetes.client.models.V1SecretKeySelector;
 /**
  * HDFSKrbConfig is auth configurations for Kerberos
  */
-public class HDFSKrbConfig   {
+public class HDFSKrbConfig  implements Serializable {
   private V1SecretKeySelector krbCCacheSecret = null;
 
   private V1ConfigMapKeySelector krbConfigConfigMap = null;
@@ -150,7 +151,7 @@ public class HDFSKrbConfig   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1HDFSKrbConfig {\n");
-    
+
     sb.append("    krbCCacheSecret: ").append(toIndentedString(krbCCacheSecret)).append("\n");
     sb.append("    krbConfigConfigMap: ").append(toIndentedString(krbConfigConfigMap)).append("\n");
     sb.append("    krbKeytabSecret: ").append(toIndentedString(krbKeytabSecret)).append("\n");

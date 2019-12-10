@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * ArtifactLocation describes a location for a single or multiple artifacts. It is used as single artifact in the context of inputs/outputs (e.g. outputs.artifacts.artname). It is also used to describe the location of multiple artifacts such as the archive location of a single workflow step, which the executor will use as a default location to store its files.
  */
-public class ArtifactLocation   {
+public class ArtifactLocation  implements Serializable {
   private Boolean archiveLogs;
 
   private ArtifactoryArtifact artifactory = null;
@@ -167,7 +168,7 @@ public class ArtifactLocation   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ArtifactLocation {\n");
-    
+
     sb.append("    archiveLogs: ").append(toIndentedString(archiveLogs)).append("\n");
     sb.append("    artifactory: ").append(toIndentedString(artifactory)).append("\n");
     sb.append("    git: ").append(toIndentedString(git)).append("\n");

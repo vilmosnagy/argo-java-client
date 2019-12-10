@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * RetryStrategy provides controls on how to retry a workflow step
  */
-public class RetryStrategy   {
+public class RetryStrategy  implements Serializable {
   private Integer limit;
 
   public RetryStrategy limit(Integer limit) {
@@ -47,7 +48,7 @@ public class RetryStrategy   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1RetryStrategy {\n");
-    
+
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();

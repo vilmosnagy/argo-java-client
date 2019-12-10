@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import io.kubernetes.client.models.V1Affinity;
@@ -15,7 +16,7 @@ import java.util.Map;
 /**
  * Template is a reusable and composable unit of execution in a workflow
  */
-public class Template   {
+public class Template   implements Serializable {
   private Long activeDeadlineSeconds;
 
   private V1Affinity affinity = null;
@@ -565,7 +566,7 @@ public class Template   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Template {\n");
-    
+
     sb.append("    activeDeadlineSeconds: ").append(toIndentedString(activeDeadlineSeconds)).append("\n");
     sb.append("    affinity: ").append(toIndentedString(affinity)).append("\n");
     sb.append("    archiveLocation: ").append(toIndentedString(archiveLocation)).append("\n");

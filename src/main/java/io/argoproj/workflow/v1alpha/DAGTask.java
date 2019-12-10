@@ -1,5 +1,6 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * DAGTask represents a node in the graph during DAG execution
  */
-public class DAGTask   {
+public class DAGTask  implements Serializable {
   private Arguments arguments = null;
 
   private ContinueOn continueOn = null;
@@ -225,7 +226,7 @@ public class DAGTask   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1DAGTask {\n");
-    
+
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("    continueOn: ").append(toIndentedString(continueOn)).append("\n");
     sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");

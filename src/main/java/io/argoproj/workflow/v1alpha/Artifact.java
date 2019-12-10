@@ -1,11 +1,12 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Artifact indicates an artifact to place at a specified path
  */
-public class Artifact   {
+public class Artifact  implements Serializable {
   private ArchiveStrategy archive = null;
 
   private Boolean archiveLogs;
@@ -307,7 +308,7 @@ public class Artifact   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1Artifact {\n");
-    
+
     sb.append("    archive: ").append(toIndentedString(archive)).append("\n");
     sb.append("    archiveLogs: ").append(toIndentedString(archiveLogs)).append("\n");
     sb.append("    artifactory: ").append(toIndentedString(artifactory)).append("\n");

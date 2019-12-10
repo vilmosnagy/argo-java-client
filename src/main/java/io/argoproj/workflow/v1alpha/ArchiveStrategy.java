@@ -1,12 +1,13 @@
 package io.argoproj.workflow.v1alpha;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * ArchiveStrategy describes how to archive files/directory when saving artifacts
  */
 
-public class ArchiveStrategy   {
+public class ArchiveStrategy   implements Serializable {
   private Object none = null;
 
   private Object tar = null;
@@ -68,7 +69,7 @@ public class ArchiveStrategy   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IoArgoprojWorkflowV1alpha1ArchiveStrategy {\n");
-    
+
     sb.append("    none: ").append(toIndentedString(none)).append("\n");
     sb.append("    tar: ").append(toIndentedString(tar)).append("\n");
     sb.append("}");
